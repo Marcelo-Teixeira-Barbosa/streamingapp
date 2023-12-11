@@ -22,6 +22,36 @@
                     <element name="users" type="tns:user" maxOccurs="unbounded"/>
                 </sequence>
             </complexType>
+            <complexType name="getAllSongsRequest">
+                <sequence/>
+            </complexType>
+            <complexType name="song">
+                <sequence>
+                    <element name="id" type="int"/>
+                    <element name="name" type="string"/>
+                    <element name="artist" type="string"/>
+                </sequence>
+            </complexType>
+            <complexType name="songArray">
+                <sequence>
+                    <element name="songs" type="tns:song" maxOccurs="unbounded"/>
+                </sequence>
+            </complexType>
+            <complexType name="getUserPlaylistsRequest">
+                <sequence>
+                    <element name="userId" type="int"/>
+                </sequence>
+            </complexType>
+            <complexType name="getPlaylistSongsRequest">
+                <sequence>
+                    <element name="playlistId" type="int"/>
+                </sequence>
+            </complexType>
+            <complexType name="getSongPlaylistsRequest">
+                <sequence>
+                    <element name="songId" type="int"/>
+                </sequence>
+            </complexType>
         </schema>
     </types>
 
@@ -32,17 +62,106 @@
         <part name="result" type="tns:userArray"/>
     </message>
 
+    <message name="getAllSongsRequest">
+        <part name="parameters" element="tns:getAllSongs"/>
+    </message>
+    <message name="getAllSongsResponse">
+        <part name="result" type="tns:songArray"/>
+    </message>
+
+    <message name="getUserPlaylistsRequest">
+        <part name="parameters" element="tns:getUserPlaylistsRequest"/>
+    </message>
+    <message name="getUserPlaylistsResponse">
+        <part name="result" type="tns:userArray"/>
+    </message>
+
+    <message name="getPlaylistSongsRequest">
+        <part name="parameters" element="tns:getPlaylistSongsRequest"/>
+    </message>
+    <message name="getPlaylistSongsResponse">
+        <part name="result" type="tns:songArray"/>
+    </message>
+
+    <message name="getSongPlaylistsRequest">
+        <part name="parameters" element="tns:getSongPlaylistsRequest"/>
+    </message>
+    <message name="getSongPlaylistsResponse">
+        <part name="result" type="tns:userArray"/>
+    </message>
+
     <portType name="StreamServicePortType">
         <operation name="getAllUsers">
             <input message="tns:getAllUsersRequest"/>
             <output message="tns:getAllUsersResponse"/>
         </operation>
+        
+        <operation name="getAllSongs">
+            <input message="tns:getAllSongsRequest"/>
+            <output message="tns:getAllSongsResponse"/>
+        </operation>
+
+        <operation name="getUserPlaylists">
+            <input message="tns:getUserPlaylistsRequest"/>
+            <output message="tns:getUserPlaylistsResponse"/>
+        </operation>
+
+        <operation name="getPlaylistSongs">
+            <input message="tns:getPlaylistSongsRequest"/>
+            <output message="tns:getPlaylistSongsResponse"/>
+        </operation>
+
+        <operation name="getSongPlaylists">
+            <input message="tns:getSongPlaylistsRequest"/>
+            <output message="tns:getSongPlaylistsResponse"/>
+        </operation>
     </portType>
 
     <binding name="StreamServiceBinding" type="tns:StreamServicePortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        
         <operation name="getAllUsers">
             <soap:operation soapAction="http://localhost:3000#getAllUsers"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="getAllSongs">
+            <soap:operation soapAction="http://localhost:3000#getAllSongs"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="getUserPlaylists">
+            <soap:operation soapAction="http://localhost:3000#getUserPlaylists"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="getPlaylistSongs">
+            <soap:operation soapAction="http://localhost:3000#getPlaylistSongs"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="getSongPlaylists">
+            <soap:operation soapAction="http://localhost:3000#getSongPlaylists"/>
             <input>
                 <soap:body use="literal"/>
             </input>

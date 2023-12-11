@@ -18,6 +18,7 @@ services:
       - "3306:3306"
     volumes:
       - ./db:/var/lib/mysql
+      - ./init-scripts:/docker-entrypoint-initdb.d
     networks:
       - streaming_network
 
