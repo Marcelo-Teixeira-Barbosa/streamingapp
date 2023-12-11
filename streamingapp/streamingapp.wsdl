@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://localhost:3000"
+             targetNamespace="http://localhost:3000"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <types>
+        <schema targetNamespace="http://localhost:3000" xmlns="http://www.w3.org/2001/XMLSchema">
+            <element name="getAllUsers" type="tns:getAllUsersRequest"/>
+            <complexType name="user">
+                <sequence>
+                    <element name="id" type="int"/>
+                    <element name="nome" type="string"/>
+                    <element name="idade" type="int"/>
+                </sequence>
+            </complexType>
+            <complexType name="getAllUsersRequest">
+                <sequence/>
+            </complexType>
+            <complexType name="userArray">
+                <sequence>
+                    <element name="users" type="tns:user" maxOccurs="unbounded"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </types>
+
+    <message name="getAllUsersRequest">
+        <part name="parameters" element="tns:getAllUsers"/>
+    </message>
+    <message name="getAllUsersResponse">
+        <part name="result" type="tns:userArray"/>
+    </message>
+
+    <portType name="StreamServicePortType">
+        <operation name="getAllUsers">
+            <input message="tns:getAllUsersRequest"/>
+            <output message="tns:getAllUsersResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="StreamServiceBinding" type="tns:StreamServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getAllUsers">
+            <soap:operation soapAction="http://localhost:3000#getAllUsers"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="StreamService">
+        <port name="StreamServicePort" binding="tns:StreamServiceBinding">
+            <soap:address location="http://localhost:3000"/>
+        </port>
+    </service>
+
+</definitions>

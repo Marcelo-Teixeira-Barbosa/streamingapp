@@ -1,7 +1,0 @@
-{
-    "require": {
-        "slim/slim": "^4.12",
-        "thecodingmachine/graphqlite": "^4.0",
-        "thecodingmachine/graphqlite-graphql": "^4.0"
-    }
-}
