@@ -92,6 +92,8 @@ Escolher a tecnologia adequada dependerá dos requisitos específicos do projeto
 - source .venv/bin/activate
 - pip install --upgrade pip
 - pip install -r requirements.txt
+- apt-get update
+- apt install php8.1-cli
 
 ### Inicializando servidor soap
 - cd streamingapp
@@ -100,3 +102,11 @@ Escolher a tecnologia adequada dependerá dos requisitos específicos do projeto
 ### Inicializando client soap
 - cd clients
 - python3 client-soap.py
+
+### Iniciandlizando servidor rest
+- cd streamingapp
+- python3 rest.py
+
+### Inicializando client rest
+- cd streamingapp
+- php client-rest.php
