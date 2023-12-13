@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "nome": "Song A",
+      "artista": "Artista A",
+      "categoria": "Pop",
+      "data_lancamento": "2022-01-15"
+    },
+    {
+      "id": 2,
+      "nome": "Song B",
+      "artista": "Artista B",
+      "categoria": "Rock",
+      "data_lancamento": "2022-02-20"
+    },
+    {
+      "id": 3,
+      "nome": "Song C",
+      "artista": "Artista C",
+      "categoria": "Hip Hop",
+      "data_lancamento": "2021-12-10"
+    },
+    {
+      "id": 4,
+      "nome": "Song D",
+      "artista": "Artista D",
+      "categoria": "Eletrônica",
+      "data_lancamento": "2022-03-05"
+    }
+  ]
+  

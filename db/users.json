@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "name": "João",
+      "idade": 25,
+      "sexo": "Masculino",
+      "email": "joao@example.com",
+      "cep": "12345-678"
+    },
+    {
+      "id": 2,
+      "name": "Maria",
+      "idade": 30,
+      "sexo": "Feminino",
+      "email": "maria@example.com",
+      "cep": "98765-432"
+    },
+    {
+      "id": 3,
+      "name": "Carlos",
+      "idade": 22,
+      "sexo": "Masculino",
+      "email": "carlos@example.com",
+      "cep": "54321-876"
+    },
+    {
+      "id": 4,
+      "name": "Ana",
+      "idade": 28,
+      "sexo": "Feminino",
+      "email": "ana@example.com",
+      "cep": "34567-890"
+    }
+  ]
+  
