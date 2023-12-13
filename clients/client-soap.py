@@ -1,20 +1,25 @@
 from zeep import Client
 
-# URL do serviço SOAP
-soap_url = "http://localhost:3000/?wsdl"
+# Substitua a URL pelo endereço do seu serviço SOAP
+url = 'http://localhost:8000/?wsdl'
+client = Client(url)
 
-# Criação do cliente SOAP
-client = Client(soap_url)
+# Exemplo de chamada para listar todos os usuários
+response_users = client.service.list_all_users()
+print("Lista de usuários:", response_users)
 
-# Chama a função getAllUsers do serviço
-result_users = client.service.getAllUsers()
-result_songs = client.service.getAllSongs()
-result_user_playlists = client.service.getUserPlaylists(user_id)
-result_playlist_songs = client.service.getPlaylistSongs(playlist_id)
-result_song_playlists = client.service.getSongPlaylists(song_id)
+# Exemplo de chamada para listar todas as músicas
+response_songs = client.service.list_all_songs()
+print("Lista de músicas:", response_songs)
 
-# Exibe os resultados
-print("Lista de Usuários:")
-for user in result_users:
-    print(f"ID: {user['id']}, Nome: {user['nome']}, Idade: {user['idade']}")
+# Exemplo de chamada para listar playlists de um usuário específico
+response_playlists = client.service.list_user_playlists(username="User1")
+print("Playlists do usuário User1:", response_playlists)
 
+# Exemplo de chamada para listar músicas de uma playlist específica
+response_playlist_songs = client.service.list_playlist_songs(playlist_name="Playlist1")
+print("Músicas da Playlist1:", response_playlist_songs)
+
+# Exemplo de chamada para listar playlists que contêm uma música específica
+response_song_playlists = client.service.list_song_playlists(song_name="SongA")
+print("Playlists que contêm a música SongA:", response_song_playlists)

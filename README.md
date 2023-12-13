@@ -87,17 +87,16 @@ Escolher a tecnologia adequada dependerá dos requisitos específicos do projeto
 
 ## Instalação local
 
-### Requisitos
-- Php 8
-- Composer
-- Apache2
-- docker
+### Inicialização para linux
+- python3 -m venv .venv
+- source .venv/bin/activate
+- pip install --upgrade pip
+- pip install -r requirements.txt
 
-### Inicialização
-- Entre na pasta streamingapp
-- Execute: composer install
-- Execute: docker-compose up (Iniciar o mysql)
-- Execute: php -S localhost:3000
-- Entre na url: http://localhost:3000
-- Procure o arquivo no projeto do qual deseja consumir o serviço e passe os parametros corretamente
+### Inicializando servidor soap
+- cd streamingapp
+- python3 soap.py
 
+### Inicializando client soap
+- cd clients
+- python3 client-soap.py
