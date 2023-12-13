@@ -94,7 +94,10 @@ Escolher a tecnologia adequada dependerá dos requisitos específicos do projeto
 - pip install -r requirements.txt
 - apt-get update
 - apt install php8.1-cli
-
+- apt-get update
+- apt-get install ruby-full
+- gem install httparty
+---------------------
 ### Inicializando servidor soap
 - cd streamingapp
 - python3 soap.py
@@ -102,11 +105,19 @@ Escolher a tecnologia adequada dependerá dos requisitos específicos do projeto
 ### Inicializando client soap
 - cd clients
 - python3 client-soap.py
-
-### Iniciandlizando servidor rest
+---------------------
+### Inicializando servidor rest
 - cd streamingapp
 - python3 rest.py
 
 ### Inicializando client rest
-- cd streamingapp
+- cd clients
 - php client-rest.php
+---------------------
+### Inicializando servidor graphql
+- cd streamingapp
+- python3 graph.py
+
+### Inicializando client graphql
+- cd clients
+- ruby client-graph.rb

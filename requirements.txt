@@ -2,3 +2,6 @@ zeep
 spyne
 flask
 requests
+graphene
+flask_graphql
+graphql-core==2.3.1

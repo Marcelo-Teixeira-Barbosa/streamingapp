@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/730550149@adm.unifor.br/Documentos/computacaodistro/streamingapp/streamingapp/.venv"
+VIRTUAL_ENV="/home/erick/projects/streaming-service/.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

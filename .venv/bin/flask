@@ -1,4 +1,4 @@
-#!/home/730550149@adm.unifor.br/Documentos/computacaodistro/streamingapp/streamingapp/.venv/bin/python3
+#!/home/erick/projects/streaming-service/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
